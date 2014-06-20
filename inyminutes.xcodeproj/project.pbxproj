@@ -19,6 +19,7 @@
 		59E0BABE195441BA009A0748 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E0BAA6195441BA009A0748 /* UIKit.framework */; };
 		59E0BAC6195441BA009A0748 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59E0BAC4195441BA009A0748 /* InfoPlist.strings */; };
 		59E0BAC8195441BA009A0748 /* inyminutesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E0BAC7195441BA009A0748 /* inyminutesTests.m */; };
+		59E0BAD3195441DE009A0748 /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E0BAD2195441DE009A0748 /* MyClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		59E0BAC3195441BA009A0748 /* inyminutesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "inyminutesTests-Info.plist"; sourceTree = "<group>"; };
 		59E0BAC5195441BA009A0748 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		59E0BAC7195441BA009A0748 /* inyminutesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inyminutesTests.m; sourceTree = "<group>"; };
+		59E0BAD1195441DE009A0748 /* MyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClass.h; sourceTree = "<group>"; };
+		59E0BAD2195441DE009A0748 /* MyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				59E0BAB2195441BA009A0748 /* AppDelegate.m */,
 				59E0BAB4195441BA009A0748 /* Images.xcassets */,
 				59E0BAA9195441BA009A0748 /* Supporting Files */,
+				59E0BAD1195441DE009A0748 /* MyClass.h */,
+				59E0BAD2195441DE009A0748 /* MyClass.m */,
 			);
 			path = inyminutes;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59E0BAD3195441DE009A0748 /* MyClass.m in Sources */,
 				59E0BAB3195441BA009A0748 /* AppDelegate.m in Sources */,
 				59E0BAAF195441BA009A0748 /* main.m in Sources */,
 			);
