@@ -91,6 +91,65 @@ int main (int argc, const char * argv[])
     NSLog(@"%f", piFloat);
     NSLog(@"%4.2f", piFloat); // => print 3.14
     
+    // double number
+    NSNumber *piDoubleNumber = @3.141592654;
+    double piDouble = [piDoubleNumber doubleValue];
+    NSLog(@"%f", piDouble);
+    NSLog(@"%4.2f", piDouble); // => print 3.14
+    
+    // decimal numbers : fixed point
+    NSDecimalNumber *oneDecNum = [NSDecimalNumber decimalNumberWithString:@"10.99"];
+    NSDecimalNumber *twoDecNum = [NSDecimalNumber decimalNumberWithString:@"5.002"];
+    // we cannot use standard mathemetic operands with NSDecimalNumber (they are objects!)
+    [oneDecNum decimalNumberByAdding:twoDecNum];
+    [oneDecNum decimalNumberBySubtracting:twoDecNum];
+    [oneDecNum decimalNumberByMultiplyingBy:twoDecNum];
+    [oneDecNum decimalNumberByDividingBy:twoDecNum];
+    NSLog(@"%@", oneDecNum);
+    
+    
+    // boolean literals
+    NSNumber *yesNumber = @YES;
+    NSNumber *noNumber = @NO;
+    
+    BOOL yesBool = YES;
+    BOOL noBool = NO;
+    NSLog(@"%i", yesBool);
+    
+    // Array object
+    NSArray *anArray = @[@1, @2, @3, @4];
+    NSNumber *thirdNumber = anArray[2];
+    NSLog(@"Third number = %@", thirdNumber);
+    
+    // mutable arrays
+    NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:2];
+    [mutableArray addObject: @"Hello world"];
+    [mutableArray addObject: @"!"];
+    [mutableArray removeObjectAtIndex:0];
+    NSLog(@"%@", [mutableArray objectAtIndex:0]);
+    
+    
+    // Dictionary object
+    NSDictionary *aDictionary = @{ @"key1" : @"value1", @"key2": @"value2" };
+    NSObject *valueObject = aDictionary[@"A Key"];
+    NSLog(@"Object = %@", valueObject); // print null
+    
+    // mutable dictionary
+    NSMutableDictionary *mutableDict = [NSMutableDictionary dictionaryWithCapacity:2];
+    [mutableDict setObject:@"value1" forKey:@"key1"];
+    [mutableDict setObject:@"value2" forKey:@"key2"];
+    [mutableDict removeObjectForKey:@"key1"];
+    
+    
+    // set object
+    NSSet *set = [NSSet setWithObjects:@"hello", @"world", @"world!!!", nil];
+    NSLog(@"%@", set);
+    
+    // mutable set
+    NSMutableSet *mutableSet = [NSMutableSet setWithCapacity:2];
+    [mutableSet addObject: @"Hello"];
+    [mutableSet addObject: @"Hello"];
+    NSLog(@"%@", mutableSet);
 }
 
 
