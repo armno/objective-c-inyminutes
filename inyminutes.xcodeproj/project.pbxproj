@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59135D4B1957D8510081E091 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 59135D4A1957D8510081E091 /* Car.m */; };
+		59135D511957D9750081E091 /* Car+Clean.m in Sources */ = {isa = PBXBuildFile; fileRef = 59135D501957D9750081E091 /* Car+Clean.m */; };
+		59135D541957DB1B0081E091 /* Car+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = 59135D531957DB1B0081E091 /* Car+Protected.m */; };
 		59E0BAA3195441BA009A0748 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E0BAA2195441BA009A0748 /* Foundation.framework */; };
 		59E0BAA5195441BA009A0748 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E0BAA4195441BA009A0748 /* CoreGraphics.framework */; };
 		59E0BAA7195441BA009A0748 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E0BAA6195441BA009A0748 /* UIKit.framework */; };
@@ -33,6 +36,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		59135D491957D7EA0081E091 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		59135D4A1957D8510081E091 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		59135D4C1957D8CE0081E091 /* Car+Clean.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Car+Clean.h"; sourceTree = "<group>"; };
+		59135D501957D9750081E091 /* Car+Clean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Car+Clean.m"; sourceTree = "<group>"; };
+		59135D521957DB1B0081E091 /* Car+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Car+Protected.h"; sourceTree = "<group>"; };
+		59135D531957DB1B0081E091 /* Car+Protected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Car+Protected.m"; sourceTree = "<group>"; };
 		59E0BA9F195441BA009A0748 /* inyminutes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inyminutes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59E0BAA2195441BA009A0748 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		59E0BAA4195441BA009A0748 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,6 +125,12 @@
 				59E0BAA9195441BA009A0748 /* Supporting Files */,
 				59E0BAD1195441DE009A0748 /* MyClass.h */,
 				59E0BAD2195441DE009A0748 /* MyClass.m */,
+				59135D491957D7EA0081E091 /* Car.h */,
+				59135D4A1957D8510081E091 /* Car.m */,
+				59135D4C1957D8CE0081E091 /* Car+Clean.h */,
+				59135D501957D9750081E091 /* Car+Clean.m */,
+				59135D521957DB1B0081E091 /* Car+Protected.h */,
+				59135D531957DB1B0081E091 /* Car+Protected.m */,
 			);
 			path = inyminutes;
 			sourceTree = "<group>";
@@ -245,7 +260,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				59E0BAD3195441DE009A0748 /* MyClass.m in Sources */,
+				59135D511957D9750081E091 /* Car+Clean.m in Sources */,
 				59E0BAB3195441BA009A0748 /* AppDelegate.m in Sources */,
+				59135D541957DB1B0081E091 /* Car+Protected.m in Sources */,
+				59135D4B1957D8510081E091 /* Car.m in Sources */,
 				59E0BAAF195441BA009A0748 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +461,7 @@
 				59E0BACD195441BA009A0748 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59E0BACE195441BA009A0748 /* Build configuration list for PBXNativeTarget "inyminutesTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +470,7 @@
 				59E0BAD0195441BA009A0748 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
