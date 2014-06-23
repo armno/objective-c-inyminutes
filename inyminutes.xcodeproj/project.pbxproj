@@ -12,6 +12,7 @@
 		59135D541957DB1B0081E091 /* Car+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = 59135D531957DB1B0081E091 /* Car+Protected.m */; };
 		59135D581957DCBB0081E091 /* Shape.m in Sources */ = {isa = PBXBuildFile; fileRef = 59135D571957DCBB0081E091 /* Shape.m */; };
 		59135D5C1957DF7F0081E091 /* CarWithUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 59135D5B1957DF7F0081E091 /* CarWithUtility.m */; };
+		59135D611957E3380081E091 /* Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 59135D601957E3380081E091 /* Blocks.m */; };
 		59E0BAA3195441BA009A0748 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E0BAA2195441BA009A0748 /* Foundation.framework */; };
 		59E0BAA5195441BA009A0748 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E0BAA4195441BA009A0748 /* CoreGraphics.framework */; };
 		59E0BAA7195441BA009A0748 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E0BAA6195441BA009A0748 /* UIKit.framework */; };
@@ -50,6 +51,8 @@
 		59135D5B1957DF7F0081E091 /* CarWithUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarWithUtility.m; sourceTree = "<group>"; };
 		59135D5D1957E24C0081E091 /* Brother.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Brother.h; sourceTree = "<group>"; };
 		59135D5E1957E2700081E091 /* Sister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sister.h; sourceTree = "<group>"; };
+		59135D5F1957E3380081E091 /* Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blocks.h; sourceTree = "<group>"; };
+		59135D601957E3380081E091 /* Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blocks.m; sourceTree = "<group>"; };
 		59E0BA9F195441BA009A0748 /* inyminutes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inyminutes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59E0BAA2195441BA009A0748 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		59E0BAA4195441BA009A0748 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +148,8 @@
 				59135D5B1957DF7F0081E091 /* CarWithUtility.m */,
 				59135D5D1957E24C0081E091 /* Brother.h */,
 				59135D5E1957E2700081E091 /* Sister.h */,
+				59135D5F1957E3380081E091 /* Blocks.h */,
+				59135D601957E3380081E091 /* Blocks.m */,
 			);
 			path = inyminutes;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 				59E0BAD3195441DE009A0748 /* MyClass.m in Sources */,
 				59135D5C1957DF7F0081E091 /* CarWithUtility.m in Sources */,
 				59135D511957D9750081E091 /* Car+Clean.m in Sources */,
+				59135D611957E3380081E091 /* Blocks.m in Sources */,
 				59E0BAB3195441BA009A0748 /* AppDelegate.m in Sources */,
 				59135D541957DB1B0081E091 /* Car+Protected.m in Sources */,
 				59135D4B1957D8510081E091 /* Car.m in Sources */,
