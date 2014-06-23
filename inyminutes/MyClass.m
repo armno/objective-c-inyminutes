@@ -237,22 +237,139 @@ int main (int argc, const char * argv[])
     [pool drain];
     } // end of autorelease pool
 
+    
+    // classes and functions
+    
+    // declare your class in a header file (MyClass.h)
+    // class declarative syntax:
+    // @interface ClassName : ParentClassName <ImplementProtocols>
+    // {
+    //    type name; <= variable declarations
+    // }
+    // @property type name; <= property declarations
+    // -/+ (type) Method declarations; <= method declarations
+    // @end
+    MyClass *myClass = [[MyClass alloc] init];
+    [MyClass setCount:10];
+    NSLog(@"%d", [MyClass count]); // prints 10
+    
+    // or using the custom getter and setter method defined in @interface
+    [myClass lengthSet:32];
+    NSLog(@"%i", [myClass lengthGet]); // print 32;
+    
+    // for convenience, you may yse rdot notation to set and access    object instance variables:
+    myClass.count = 45;
+    NSLog(@"%i", myClass.count); // print => 45
+    
+    // call class method:
+    NSString *classMethodString = [MyClass classMethod];
+    MyClass *classFromName = [MyClass myClassFromName:@"Hello"];
+    
+    // call instance methods:
+    MyClass *myClass = [[MyClass alloc] init];
+    NSString *stringFromInstanceMethod = [myClass instanceMethodWithParameter:@"Hello"];
+    
+    
+    // selectors
+    // way to dynamically represent methods. use to call methods of a class,
+    // pass methods through functions to tell other classes they should call it
+    // and to save methods as variables
+    // SEL is the data type. @selector() returns a selector from method name provided
+    // methodAParameterAsString:andAparaaaameterAsNumber: is method name for method in MyClass
+    SEL selectorVar = @selector(methodAParameterAsString:andAParameterAsNumbeer:);
+    if ([myClass respondsToSelector:selectorVar]) {
+        // check if class contains method
+        // must put all methods arguments into one object to send to
+        // performSelector function
+        NSArray *arguments = [NSArray arrayWithObjects:@"Hello" count:@4];
+        [myClass performSelector:selectorVar withObject:arguments];
+        // call the method
+    } else {
+        NSLog(@"MyClass does not have method: %@", NSStringFromSelector(selectorVar));
+    }
     return 0;
     
 }
 
+@implementation MyClass {
+    long distance;
+    NSNumber height;
+}
 
-// classes and functions
+// to access a public variable from the interface file, use `_`
+// followed by variable name
+_count = 5; // reference `int count` from MyClass interface
 
-// declare your class in a header file (MyClass.h)
-// class declarative syntax:
-// @interface ClassName : ParentClassName <ImplementProtocols>
-// {
-//    type name; <= variable declarations
-// }
-// @property type name; <= property declarations
-// -/+ (type) Method declarations; <= method declarations
-// @end
-@implementation MyClass
+// access variable defined in implementation file
+distance = 18;
 
-@end
+// to use @property variable in implementation, use @synthesize to crease accessor variable
+@synthesize roString = _roString;
+
++ (void)initialize
+{
+    if (self == [MyClass class])
+    {
+        distance = 0;
+    }
+}
+
+// counterpart to initialize method.
+// called when an object's reference count is zero
+- (void)dealloc
+{
+    [height release]; // if not using ARC, make sure to release class vairable objects
+    [super dealloc]; // and call the parent dealloc
+}
+
+
+// constructures are a way of creating instacnes of a class
+// this is a default constructor which is called when the object is initialized
+- (id) init
+{
+    if ((self = [super init])) {
+        self.count = 1; // self used for object to call itself
+    }
+    return self;
+}
+
+// can create constructors that contains arguments
+- (id)initWithDistance:(int)defaultDistance
+{
+    distance = defaultDistance;
+    return self;
+}
+
++ (NSString *)classMethod
+{
+    return [[self alloc] init];
+}
+
+- (NSString *)instanceMethodWithParameter:(NSString *)string
+{
+    return @"New String";
+}
+
+- (NSNumber *)methodAParameterAsString:(NSString *)string andAParameterAsNumbeer:(NSNumber *)number
+{
+    return @42;
+}
+
+// objective-c doesn't have private method declarations,
+// but you can simulate them.
+// to do so, create the method in the @implementation but not in the @inteface
+
+- (NSNumber *)secretPrivateMethod
+{
+    return @72;
+}
+[self secretPrivateMethod]; // call private method
+
+// methods declared into MyProtocol
+- (void)myProtocolMethod
+{
+    // statements
+}
+@end // end of the implementation
+
+
