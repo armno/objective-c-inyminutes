@@ -242,7 +242,17 @@ int main (int argc, const char * argv[])
 }
 
 
+// classes and functions
 
+// declare your class in a header file (MyClass.h)
+// class declarative syntax:
+// @interface ClassName : ParentClassName <ImplementProtocols>
+// {
+//    type name; <= variable declarations
+// }
+// @property type name; <= property declarations
+// -/+ (type) Method declarations; <= method declarations
+// @end
 @implementation MyClass
 
 @end
