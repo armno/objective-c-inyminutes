@@ -12,12 +12,11 @@
 int main (int argc, const char * argv[])
 {
     // create an autorelease pool to manage the memory into the program
-//    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-//    NSLog(@"%@", pool);
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSLog(@"%@", pool);
     
     @autoreleasepool {
         
-    }
     
     NSLog(@"Hello world");
     
@@ -150,6 +149,96 @@ int main (int argc, const char * argv[])
     [mutableSet addObject: @"Hello"];
     [mutableSet addObject: @"Hello"];
     NSLog(@"%@", mutableSet);
+    
+    
+    // OPERATORs
+    // like in c language
+    2 + 5; // => 7
+    4.2f + 5.1f;
+    3 == 2;
+    4 != 2;
+    1 && 1;
+    0 || 0;
+    ~0x0F; // > bitwise negation
+    0x0F & 0x0F; // > bitwise and
+    0x01 << 1; // bitwise left shift
+    
+    
+    // control structure;
+    if (NO) {
+        NSLog(@"I'm never run");
+    } else if (0) {
+        NSLog(@"This is also never run");
+    } else {
+        NSLog(@"Hello, I run");
+    }
+    
+    // switch-case statements
+    switch (2) {
+        case 0:
+            NSLog(@"I'm not two");
+            break;
+            
+        case 1:
+            NSLog(@"me neither");
+            break;
+            
+        default:
+            NSLog(@"I print");
+            break;
+    }
+    
+    // while loop
+    int ii = 0;
+    while (ii < 4) {
+        NSLog(@"%d", ii++); // increase ii in-place after increase its value
+    }
+    
+    
+    // for loop
+    int jj;
+    for (jj = 0; jj < 4; jj++) {
+        NSLog(@"%d", jj);
+    }
+    
+    // foreach
+    NSArray *values = @[@0, @1, @2, @3];
+    for (NSNumber *value in values) {
+        NSLog(@"%d", [value intValue]);
+    }
+    
+    // object for loop
+    for (id item in values) {
+        NSLog(@"%@", item);
+    }
+    
+    // try-catch
+    @try {
+        @throw [NSException exceptionWithName:@"FileNotFoundException" reason:@"File not found on System" userInfo:nil];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@", exception);
+    }
+    @finally {
+        NSLog(@"Finally. Time to clean up");
+    }
+    
+    // NSError objects are useful for function arguments to populate on user mistakes
+    NSError *error = [NSError errorWithDomain:@"Invalid email" code:4 userInfo:nil];
+    
+    // objects
+    // create an object by 1. allocate memory and initialize the object
+    MyClass *myObject = [[MyClass alloc] init];
+    
+    // pass message to the object
+    [myObject instanceMethodWithParameter:@"Steve Jobs"];
+    
+    // clean up memeory used in the app
+    [pool drain];
+    } // end of autorelease pool
+
+    return 0;
+    
 }
 
 
