@@ -373,3 +373,52 @@ distance = 18;
 @end // end of the implementation
 
 
+
+// memory management
+MyClass *classVar = [MyClass alloc];
+// `alloc` sets classVar's reference count to one. return pointer to object.
+[classVar release];
+// decrements classVar's reference count
+// `retain` claims ownership of existing object instance and increments reference count.
+MyClass *newVar = [classVar retain];
+// if classVar is released, object is still in memory becase newVar is owner
+[classVar autorelease];
+// removes ownership of object at the end of @autoreleasepool block
+
+
+// @property can use `retain` and `assign` as well for small convenient definitions
+@property (retain) MyClass *instance;
+// release old value and retain a new one (strong reference)
+@property (assign) NSSet *set;
+// pointer to new value without retaining/releasing old (weak reference)
+
+
+// ARC - Automatic Reference Counting
+// because memory management can be a pain, xcode 4.2 and ios 4 introduced ARC
+// ARC is a compiler feature that inserts retain, release, and autorelease automatically
+// you must not use retain, release, or autorelease
+MyClass *arcMyClass = [[MyClass alloc] init];
+
+// ... code using arcMyClass
+// without ARC, you will need to call: [arcMyClass release] after you're done using arcMyClass
+// there is no need. it will insert this release statement for you
+
+// as for the `assign` and `retain` @property attributes,
+// with ARC you use 'weak' and 'strong'
+@property (weak) MyClass *weakVar;
+// 'weak' doesn't take ownership of the object. if original instance's reference count
+// is set to zero, weakVar will automatically receive value of nill to avoid application
+@property (strong) MyClass *strongVar;
+// `strong` takes ownership of object.  ensure object will stay in memory to use
+
+// For regular variables (not @property declared variables), use the following:
+
+// default - variable is retained in memory until in leaves its scope
+__strong NSString *strongString;
+
+// weak reference to exising object. when existing object is release, weakSet is set to nil
+__weak NSSet *weakSet;
+
+// like __weak, but unsafeArray not set to nil when existing object is released
+__unsafe_unretained NSArray *unsafeArray;
+
